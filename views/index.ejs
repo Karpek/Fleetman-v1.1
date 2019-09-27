@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="\css\index_register.css" />
+    <title>FLEETMAN</title>
+  </head>
+  <body>
+    <% include ./partials/messeges.ejs %>
+    <div class="container">
+      <h1 class="title">FLEETMAN</h1>
+      <p>
+        welcome to the FLEETMAN system. please enter credentials.
+      </p>
+      <form class="form-box" action="/" method="POST">
+        <input
+          type="username"
+          class="text-input"
+          name="username"
+          placeholder="u s e r n a m e"
+        />
+        <input
+          type="password"
+          class="text-input"
+          name="password"
+          placeholder="p a s s w o r d"
+        />
+        <br />
+        <button class="login" type="submit">LOG IN</button>
+      </form>
+    </div>
+  </body>
+</html>

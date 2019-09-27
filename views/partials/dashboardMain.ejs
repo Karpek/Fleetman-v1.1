@@ -1,0 +1,39 @@
+<h1 class="dashboard">
+  WELCOME TO THE DASHBOARD<br />
+  <%= name %>
+</h1>
+<div class="wrapper">
+  <div class="box-1">
+    <form action="/users/passchange" method="POST">
+      <h3>CHANGE PASSWORD</h3>
+      <% include ./messeges.ejs %>
+      <label>new password</label>
+      <input
+        type="password"
+        placeholder="new password"
+        name="newPassword"
+      /><br />
+      <label>confirm new password</label>
+      <input
+        type="password"
+        placeholder="confirm new password"
+        name="newPasswordConfirm"
+      /><br />
+      <button class="styled-button" type="submit">CHANGE PASSWORD</button>
+    </form>
+  </div>
+  <div class="box-2">
+    <h3>TODOs</h3>
+    <form action="/dashboard/loadnotes">
+      <div>
+        <textarea name="notes" rows="10" cols="100">
+Your notes here...
+</textarea
+        >
+        <button class="styled-button" type="submit">
+          LOAD NOTES
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

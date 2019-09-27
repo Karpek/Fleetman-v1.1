@@ -1,0 +1,21 @@
+{
+  "name": "omgomgomg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "2.0.0",
+    "cookie-parser": "1.4.4",
+    "dotenv": "8.1.0",
+    "express": "4.17.1",
+    "ejs": "2.6.2",
+    "express-session": "1.16.2",
+    "oracledb": "3.1.2"
+  }
+}

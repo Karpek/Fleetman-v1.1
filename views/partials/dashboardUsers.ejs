@@ -1,0 +1,117 @@
+<% if(content=='usersSearch'){%>
+<div class="topnav">
+  <a id="btn-active" href="/users/search">SEARCH FOR A USER</a>
+  <a href="/users/add">ADD/EDIT USER</a>
+  <a href="/users/show">SHOW USERS</a>
+</div>
+<div class="wrapper">
+  <div class="box-1">
+    <form action="/users/search" method="POST">
+      <h3>CUSTOMER ID</h3>
+      <% include ./messeges.ejs %>
+      <input
+        type="text"
+        placeholder="starts with 500"
+        name="customerID"
+      /><br />
+      <button class="styled-button" type="submit">SEARCH</button>
+    </form>
+  </div>
+  <div class="box-2">
+    <h3>CUSTOMER INFO</h3>
+  </div>
+</div>
+<%}%> <% if(content=='usersAdd'){%>
+<div class="topnav">
+  <a href="/users/search">SEARCH FOR A USER</a>
+  <a id="btn-active" href="/users/add">ADD/EDIT USER</a>
+  <a href="/users/show">SHOW USERS</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    <form action="/users/add" method="POST">
+      <div>
+        <h3>ADD CUSTOMER</h3>
+        <% include ./messeges.ejs %>
+        <label>first name</label><br />
+        <input name="addFirstName" type="text" />
+      </div>
+      <div>
+        <label>last name</label><br />
+        <input name="addLastName" type="text" />
+      </div>
+      <div>
+        <label>phone </label><br />
+        <input name="addPhone" type="text" />
+      </div>
+      <div>
+        <label>email </label><br />
+        <input name="addEMail" type="text" />
+      </div>
+
+      <div>
+        <button class="styled-button" type="submit">
+          ADD CUSTOMER
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="box-6">
+    <form action="/users/edit/search" method="POST">
+      <div>
+        <h3>EDIT CUSTOMER</h3>
+        <label>CUSTOMER ID </label><br />
+        <input name="editID" type="text" />
+      </div>
+      <div>
+        <label>first name </label><br />
+        <input name="editFirstName" type="text" />
+      </div>
+      <div>
+        <label>last name </label><br />
+        <input name="editLastName" type="text" />
+      </div>
+      <div>
+        <label>phone </label><br />
+        <input name="editPhone" type="text" />
+      </div>
+      <div>
+        <label>email </label><br />
+        <input name="editMail" type="text" />
+      </div>
+      <div>
+        <button class="styled-button">
+          SEARCH
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<%}%> <% if(content=='usersShow'){%>
+<head>
+  <link rel="stylesheet" type="text/css" href="\css\carsShow.css" />
+</head>
+<div class="topnav">
+  <a href="/users/search">SEARCH FOR A USER</a>
+  <a href="/users/add">ADD/EDIT USER</a>
+  <a id="btn-active" href="/users/show">SHOW USERS</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    <h3>SEARCH FOR CUSTOMERS</h3>
+    <h3>SORT BY:</h3>
+    <form action="/users/show" method="POST">
+      <select name="sortBy">
+        <option value="name">NAME</option>
+        <option value="surname">SURNAME</option>
+        <option value="customerID">CUSTOMER ID</option>
+      </select>
+      <div>
+        <button class="styled-button" type="submit">
+          SEARCH FOR CUSTOMERS
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<%}%>

@@ -1,0 +1,64 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="\css\tables.css" />
+</head>
+<div class="topnav">
+  <a href="/rentals">RENT VEHICLE</a>
+  <a id="btn-active" href="/rentals/show">END/SHOW RENTALS</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    
+    <h3>SEARCH FOR RENTALS</h3>
+    <h3>SORT BY:</h3>
+    <form action="/rentals/show" method="POST">
+      <select name="sortBy">
+        <option value="name">NAME</option>
+        <option value="surname">SURNAME</option>
+        <option value="reg">REG</option>
+        <option value="vehid">VEHICLE ID</option>
+        <option value="customerid">CUSTOMER ID</option>
+      </select>
+      <div>
+        <button class="styled-button" type="submit">
+          SEARCH FOR RENTALS
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="box-6">
+    <table>
+      <tr>
+        <th>REGISTRATION</th>
+        <th>MARK</th>
+        <th>MODEL</th>
+        <th>VEHICLE ID</th>
+        <th>SURNAME</th>
+        <th>NAME</th>
+        <th>CUSTOMER ID</th>
+      </tr>
+
+      <% for(let i = 0 ; i < rowsCount ; i++) { %>
+      <tr>
+        <% for(let j = 0 ; j < 7 ; j++){ %>
+        <th><%= resultRentalsSearch.rows[i][j] %></th>
+        <%}%>
+      </tr>
+
+      <%}%>
+    </table>
+  </div>
+  <div class="box-3">
+    <h3>END RENTAL</h3>
+   <form action="/rentals/end" method="POST">
+    <select name="end">
+ <% for(let i = 0 ; i < rowsCount ; i++) { %>
+<option value= <%= resultRentalsSearch.rows[i][6] %>>
+REG: <%= resultRentalsSearch.rows[i][0] %> , ID: <%= resultRentalsSearch.rows[i][3] %> | => | SURNAME: <%= resultRentalsSearch.rows[i][4] %> , ID: <%= resultRentalsSearch.rows[i][6] %>
+</option>
+<%}%>
+</select>
+<button class="styled-button">END RENTAL</button>
+   </form>
+    </tr>
+  </div>
+</div>

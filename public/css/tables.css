@@ -1,0 +1,26 @@
+.box-5 {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr 3fr;
+}
+.box-6 {
+  overflow-y: auto;
+  max-height: 90vh;
+  align-content: flex-start;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #793737;
+}

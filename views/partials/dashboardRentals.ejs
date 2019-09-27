@@ -1,0 +1,56 @@
+<% if(content=='dashboardRentals'){ %>
+
+<div class="topnav">
+  <a id="btn-active" href="/rentals">RENT VEHICLE</a>
+  <a href="/rentals/show">END/SHOW RENTALS</a>
+</div>
+<!-- SEARCH CARS -->
+<div class="wrapper">
+  <div class="box-10">
+    <% include ./messeges.ejs %>
+    <h3>RENT A VEHICLE</h3>
+    <form action="/rentals/rentvehicle" method="POST">
+      <label>search for cars</label><br />
+      <select name="" id="">
+        <option selected disabled>SEARCH FOR CARS</option> </select
+      ><br />
+      <label>search for customers</label><br />
+      <select name="" id="">
+        <option selected disabled>SEARCH FOR CUSTOMERS</option> </select
+      ><br />
+      <button class="styled-button" type="submit">
+        SEARCH FOR ELEMENTS
+      </button>
+    </form>
+  </div>
+</div>
+<%}%> <% if(content=='rentalsShow'){ %>
+<head>
+  <link rel="stylesheet" type="text/css" href="\css\carsShow.css" />
+</head>
+<div class="topnav">
+  <a href="/rentals">RENT VEHICLE</a>
+  <a id="btn-active" href="/rentals/show">END/SHOW RENTALS</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    <% include ./messeges.ejs %>
+    <h3>SEARCH FOR RENTALS</h3>
+    <h3>SORT BY:</h3>
+    <form action="/rentals/show" method="POST">
+      <select name="sortBy">
+        <option value="name">NAME</option>
+        <option value="surname">SURNAME</option>
+        <option value="reg">REG</option>
+        <option value="vehid">VEHICLE ID</option>
+        <option value="customerid">CUSTOMER ID</option>
+      </select>
+      <div>
+        <button class="styled-button" type="submit">
+          SEARCH FOR RENTALS
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<%}%>

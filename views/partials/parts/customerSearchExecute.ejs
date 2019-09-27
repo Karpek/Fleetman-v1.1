@@ -1,0 +1,47 @@
+<% let customerName = customerData.name %> <% let customerSurname =
+customerData.surname %> <% let customerEmail = customerData.email %> <% let
+customerPhone = customerData.phone %> <% let customerEnd = customerData.end %>
+<% let customerVehicle = customerData.vehicle %>
+<div class="topnav">
+  <a id="btn-active" href="/users/search">SEARCH FOR A USER</a>
+  <a href="/users/add">ADD/EDIT USER</a>
+  <a href="/users/show">SHOW USERS</a>
+</div>
+
+<div class="wrapper">
+  <div class="box-1">
+    <form action="/users/search" method="POST">
+      <h3>CUSTOMER ID</h3>
+      <input
+        type="text"
+        placeholder="starts with 500"
+        name="customerID"
+      /><br />
+      <button class="styled-button" type="submit">SEARCH</button>
+    </form>
+  </div>
+  <div class="box-2">
+    <h3>CUSTOMER INFO</h3>
+    <div>
+      <label>first name </label><br />
+      <input type="text" name="fname" value=<%= customerName %> readonly />
+    </div>
+    <div>
+      <label>last name </label><br />
+      <input type="text" name="lname" value=<%= customerSurname %> readonly />
+    </div>
+    <div>
+      <label>e-mail </label><br />
+      <input type="text" name="email" value=<%= customerEmail %> readonly />
+    </div>
+    <div>
+      <label>phone number </label><br />
+      <input type="text" name="phone" value=<%= customerPhone %> readonly />
+    </div>
+
+    <div>
+      <label>vehicle </label><br />
+      <input type="text" name="vehicle" value=<%= customerVehicle %> readonly />
+    </div>
+  </div>
+</div>

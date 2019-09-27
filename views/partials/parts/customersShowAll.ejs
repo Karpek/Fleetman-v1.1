@@ -1,0 +1,49 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="\css\tables.css" />
+</head>
+<div class="topnav">
+  <a  href="/users/search">SEARCH FOR A USER</a>
+  <a href="/users/add">ADD/EDIT USER</a>
+  <a id="btn-active" href="/users/show">SHOW USERS</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    <h3>SEARCH FOR CUSTOMERS</h3>
+    <h3>SORT BY:</h3>
+    <form action="/users/show" method="POST">
+      <select name="sortBy">
+        <option value="name">NAME</option>
+        <option value="surname">SURNAME</option>
+        <option value="customerID">CUSTOMER ID</option>
+      </select>
+      <div>
+        <button class="styled-button" type="submit">
+          SEARCH FOR CUSTOMERS
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="box-6">
+    <table>
+      <tr>
+        <th>FIRST NAME</th>
+        <th>SURNAME</th>
+        <th>E-MAIL</th>
+        <th>PHONE</th>
+        <th>CUSTOMER ID</th>
+        
+      </tr>
+
+      <% for(let i = 0 ; i < rowsCount ; i++) { %>
+      <tr>
+        <% for(let j = 0 ; j < 5 ; j++){ %>
+        <th><%= resultSearchAll.rows[i][j] %></th>
+        <%}%>
+      </tr>
+
+      <%}%>
+    </table>
+  </div>
+</div>
+</div>

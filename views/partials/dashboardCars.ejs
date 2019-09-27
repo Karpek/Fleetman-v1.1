@@ -1,0 +1,200 @@
+<% if(content=='manageCars'){ %>
+
+<div class="topnav">
+  <a id="btn-active" href="/cars/search">SEARCH FOR A VEHICLE</a>
+  <a href="/cars/add">ADD/EDIT VEHICLE</a>
+  <a href="/cars/show">SHOW VEHICLES</a>
+</div>
+<!-- SEARCH CARS -->
+<div class="wrapper">
+  <div class="box-1">
+    <form action="/cars/search" method="POST">
+      <h3>REGISTRATION</h3>
+      <% include ./messeges.ejs %>
+      <input type="text" placeholder="e.g. WT95073" name="reg" /><br />
+      <button class="styled-button" type="submit">SEARCH</button>
+    </form>
+  </div>
+  <div class="box-2">
+    <h3>BASICS</h3>
+    <div>
+      <label>mark </label><br />
+      <input type="text" readonly />
+    </div>
+    <div>
+      <label>model </label><br />
+      <input type="text" readonly />
+    </div>
+    <div>
+      <label>fuel </label><br />
+      <input type="text" readonly />
+    </div>
+    <div>
+      <label>gearbox </label><br />
+      <input type="text" readonly />
+    </div>
+    <div>
+      <label>status </label><br />
+      <input type="text" readonly />
+      <i class="fas fa-info">
+        <span class="tiptext"
+          >1 - FULLY AVAILABLE <br />
+          2- RENTED<br />
+          3 - NEED REPAIR<br />
+          4 - NOT RENTABLE<br />
+          5 - SOLD</span
+        ></i
+      >
+    </div>
+  </div>
+</div>
+<%}%> <% if(content=='carAdd'){%>
+<!-- ADD CARS -->
+<div class="topnav">
+  <a href="/cars/search">SEARCH FOR A VEHICLE</a>
+  <a id="btn-active" href="/cars/add">ADD/EDIT VEHICLE</a>
+  <a href="/cars/show">SHOW VEHICLES</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    <form action="/cars/add" method="POST">
+      <div>
+        <h3>ADD VEHICLE</h3>
+        <% include ./messeges.ejs %>
+        <label>REGISTRATION </label><br />
+        <input name="addReg" type="text" />
+      </div>
+      <div>
+        <label>mark </label><br />
+        <input name="addMark" type="text" />
+      </div>
+      <div>
+        <label>model </label><br />
+        <input name="addModel" type="text" />
+      </div>
+      <div>
+        <label>fuel </label><br />
+        <select name="addFuel">
+          <option value="PETROL">PETROL</option>
+          <option value="DIESEL">DIESEL</option>
+        </select>
+      </div>
+      <div>
+        <label>gearbox </label><br />
+        <select name="addGearbox">
+          <option value="MAN">MANUAL</option>
+          <option value="AUT">AUTOMATIC</option>
+        </select>
+      </div>
+      <div>
+        <label>status </label><br />
+        <select name="addStatus">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="2">3</option>
+          <option value="2">4</option>
+          <option value="2">5</option> </select
+        ><i class="fas fa-info">
+          <span class="tiptext"
+            >1 - FULLY AVAILABLE <br />
+            2- RENTED<br />
+            3 - NEED REPAIR<br />
+            4 - NOT RENTABLE<br />
+            5 - SOLD</span
+          ></i
+        >
+      </div>
+      <div>
+        <button class="styled-button" type="submit">
+          ADD VEHICLE
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="box-6">
+    <form action="/cars/edit/search" method="POST">
+      <div>
+        <h3>EDIT VEHICLE</h3>
+        <label>REGISTRATION </label><br />
+        <input name="editReg" type="text" />
+      </div>
+      <div>
+        <label>mark </label><br />
+        <input name="editMark" type="text" />
+      </div>
+      <div>
+        <label>model </label><br />
+        <input name="editModel" type="text" />
+      </div>
+      <div>
+        <label>fuel </label><br />
+        <select name="editFuel">
+          <option value="petrol">PETROL</option>
+          <option value="diesel">DIESEL</option>
+        </select>
+      </div>
+      <div>
+        <label>gearbox </label><br />
+        <select name="editGearbox">
+          <option value="MAN">MANUAL</option>
+          <option value="AUT">AUTOMATIC</option>
+        </select>
+      </div>
+      <div>
+        <label>status </label><br />
+        <select name="editStatus">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="2">3</option>
+          <option value="2">4</option>
+          <option value="2">5</option> </select
+        ><i class="fas fa-info">
+          <span class="tiptext"
+            >1 - FULLY AVAILABLE <br />
+            2- RENTED<br />
+            3 - NEED REPAIR<br />
+            4 - NOT RENTABLE<br />
+            5 - SOLD</span
+          ></i
+        >
+      </div>
+      <div>
+        <button class="styled-button" formaction="/cars/edit/search">
+          SEARCH
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<%}%> <% if(content=='carEditExecute'){%> <% include ./parts/carEditExecute.ejs
+%> <%}%> <% if(content=='carsShow'){%>
+<head>
+  <link rel="stylesheet" type="text/css" href="\css\carsShow.css" />
+</head>
+<div class="topnav">
+  <a href="/cars/search">SEARCH FOR A VEHICLE</a>
+  <a href="/cars/add">ADD/EDIT VEHICLE</a>
+  <a id="btn-active" href="/cars/show">SHOW VEHICLES</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    <h3>SEARCH FOR VEHICLES</h3>
+    <h3>SORT BY:</h3>
+    <form action="/cars/show" method="POST">
+      <select name="sortBy">
+        <option value="reg">REGISTRATION</option>
+        <option value="mark">MARK</option>
+        <option value="model">MODEL</option>
+        <option value="fuel">FUEL</option>
+        <option value="gearbox">GEARBOX</option>
+        <option value="status">STATUS</option>
+      </select>
+      <div>
+        <button class="styled-button" type="submit">
+          Search Vehicles
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<%}%>

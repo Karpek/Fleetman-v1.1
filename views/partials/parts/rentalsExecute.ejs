@@ -1,0 +1,46 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="\css\carsShow.css" />
+</head>
+
+ <div class="topnav">
+  <a id="btn-active"  href="/rentals">RENT VEHICLE</a>
+  <a href="/rentals/show">END/SHOW RENTALS</a>
+</div>
+
+<!-- SEARCH CARS -->
+<div class="wrapper">
+  <div class="box-10">
+    <h3>RENT A VEHICLE</h3>
+    <form action="/rentals/rentvehicle" method="POST" >
+      <label>pick a vehicle</label><br />
+     <select name="veh">
+<% for(let i = 0 ; i < vehiclesCount ; i++) { %>
+  <option  value= <%= resultVehicles.rows[i][3] %>>
+        <% for(let j = 0 ; j < 4 ; j++){ %>
+        <%= resultVehicles.rows[i][j] + " | " %>
+        <%}%>
+</option>
+      <%}%>
+
+    </select><br>
+      <label>pick a customer</label><br />
+        <select  name="cust">
+        <% for(let i = 0 ; i < customersCount ; i++) { %>
+  <option value=<%= resultCustomers.rows[i][2]%>>
+        <% for(let j = 0 ; j < 3 ; j++){ %>
+        <%= resultCustomers.rows[i][j] + " | " %>
+        <%}%> 
+</option>
+      <%}%>
+    </select><br>
+    <label>end of using</label><br>
+      
+      <button class="styled-button" type="submit">
+        SEARCH FOR ELEMENTS
+      </button>
+       <button class="styled-button" formaction="/rentals/saverental" formmethod="POST">
+        RENT A VEHICLE
+      </button>
+    </form>
+  </div>
+</div>

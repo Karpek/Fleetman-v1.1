@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="\css\index_register.css" />
+    <title>Register!</title>
+  </head>
+  <body>
+    <% include ./partials/messeges.ejs %>
+    <div class="container">
+      <h1 class="title">FLEETMAN - REGISTER</h1>
+      <p>
+        please enter your data.
+      </p>
+      <form class="form-box" method="POST">
+        <input
+          type="username"
+          class="text-input"
+          name="username"
+          placeholder="u s e r n a m e"
+        /><br />
+        <input
+          type="password"
+          class="text-input"
+          name="password"
+          placeholder="p a s s w o r d"
+        />
+        <br />
+        <input
+          type="password"
+          class="text-input"
+          name="password2"
+          placeholder="c o n f i r m  p a s s w o r d"
+        />
+        <br />
+        <button id="create_new_user" class="login" type="submit">
+          REGISTER
+        </button>
+        <button class="login" formaction="/" formmethod="GET">
+          GO BACK
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

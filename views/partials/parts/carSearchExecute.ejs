@@ -1,0 +1,86 @@
+<!-- VEHICLE DATA FETCHING -->
+<% let carMark = vehicleData.mark; %> <% let carModel = vehicleData.model; %> <%
+let carFuel = vehicleData.fuel; %> <% let carGearbox = vehicleData.gearbox; %>
+<% let carStatus = vehicleData.status; %> <% let carReg = vehicleData.reg; %> <%
+let vehicleID = vehicleData.vehicleID; %>
+<div class="topnav">
+  <a id="btn-active" href="/cars/search">SEARCH FOR A VEHICLE</a>
+  <a href="/cars/add">ADD/EDIT VEHICLE</a>
+  <a href="/cars/show">SHOW VEHICLES</a>
+</div>
+
+<div class="wrapper">
+  <div class="box-1">
+    <form action="/cars/search" method="POST">
+      <h3>REGISTRATION</h3>
+      <input type="text" placeholder="e.g. WT90579" name="reg" value=<%= carReg
+      %>><br />
+      <button class="styled-button" type="submit">SEARCH</button>
+    </form>
+  </div>
+  <div class="box-2">
+    <h3>BASICS</h3>
+    <div>
+      <label>mark </label><br />
+      <input type="text" name="mark" value=<%= carMark %> readonly />
+    </div>
+    <div>
+      <label>model </label><br />
+      <input type="text" name="model" value=<%= carModel %> readonly />
+    </div>
+    <div>
+      <label>fuel </label><br />
+      <input type="text" name="fuel" value=<%= carFuel %> readonly />
+    </div>
+    <div>
+      <label>gearbox </label><br />
+      <input type="text" name="gearbox" value=<%= carGearbox%> readonly />
+    </div>
+    <div>
+      <label>status </label><br />
+      <input type="text" name="status" value=<%= carStatus %> readonly />
+      <i class="fas fa-info">
+        <span class="tiptext"
+          >1 - FULLY AVAILABLE <br />
+          2- RENTED<br />
+          3 - NEED REPAIR<br />
+          4 - NOT RENTABLE<br />
+          5 - SOLD</span
+        ></i
+      >
+    </div>
+    <div>
+      <label>vehicle ID </label><br />
+      <input type="text" name="vehicleID" value=<%= vehicleID %> readonly />
+    </div>
+  </div>
+  <% if(customer){%>
+  <!-- CUSTOMER DATA -->
+  <% let customerName = customerData.name %> <% let customerSurname =
+  customerData.surname %> <% let customerEmail = customerData.email %> <% let
+  customerPhone = customerData.phone %>
+  <div class="box-3">
+    <h3>CUSTOMER INFO</h3>
+    <div>
+      <label>first name </label><br />
+      <input type="text" name="fname" value=<%= customerName %> readonly />
+    </div>
+    <div>
+      <label>last name </label><br />
+      <input type="text" name="lname" value=<%= customerSurname %> readonly />
+    </div>
+    <div>
+      <label>e-mail </label><br />
+      <input type="text" name="email" value=<%= customerEmail %> readonly />
+    </div>
+    <div>
+      <label>phone number </label><br />
+      <input type="text" name="phone" value=<%= customerPhone %> readonly />
+    </div>
+  </div>
+
+  <%}%> <%if(!customer) {%>
+  <div class="box-3"><h3>NO CUSTOMER ATTACHED TO THE VEHICLE</h3></div>
+</div>
+
+<%}%>

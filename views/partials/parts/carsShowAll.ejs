@@ -1,0 +1,50 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="\css\tables.css" />
+</head>
+<div class="topnav">
+  <a href="/cars/search">SEARCH FOR A VEHICLE</a>
+  <a href="/cars/add">ADD/EDIT VEHICLE</a>
+  <a id="btn-active" href="/cars/show">SHOW VEHICLES</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    <h3>SEARCH FOR VEHICLES</h3>
+    <h3>SORT BY:</h3>
+    <form action="/cars/show" method="POST">
+      <select name="sortBy">
+        <option value="reg">REGISTRATION</option>
+        <option value="mark">MARK</option>
+        <option value="model">MODEL</option>
+        <option value="fuel">FUEL</option>
+        <option value="gearbox">GEARBOX</option>
+        <option value="status">STATUS</option>
+      </select>
+      <div>
+        <button class="styled-button" type="submit">
+          Search Vehicles
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="box-6">
+    <table>
+      <tr>
+        <th>REGISTRATION</th>
+        <th>MARK</th>
+        <th>MODEL</th>
+        <th>FUEL</th>
+        <th>GEARBOX</th>
+        <th>STATUS</th>
+      </tr>
+
+      <% for(let i = 0 ; i < rowsCount ; i++) { %>
+      <tr>
+        <% for(let j = 0 ; j < 6 ; j++){ %>
+        <th><%= resultSearchAll.rows[i][j] %></th>
+        <%}%>
+      </tr>
+
+      <%}%>
+    </table>
+  </div>
+</div>

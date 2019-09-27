@@ -1,0 +1,69 @@
+<% let name = customerData.name; %> <% let surname = customerData.surname;
+%> <% let phone = customerData.phone; %> <% let email =
+customerData.mail; %><% let customerID =
+customerData.customerID; %>
+
+<div class="topnav">
+  <a href="/users/search">SEARCH FOR A USER</a>
+  <a id="btn-active" href="/users/add">ADD/EDIT USER</a>
+  <a href="/users/show">SHOW USERS</a>
+</div>
+<div class="box-5">
+  <div class="box-6">
+    <form action="/users/add" method="POST">
+      <div>
+        <h3>ADD CUSTOMER</h3>
+        <label>first name</label><br />
+        <input name="addFirstName" type="text" />
+      </div>
+      <div>
+        <label>last name</label><br />
+        <input name="addLastName" type="text" />
+      </div>
+      <div>
+        <label>phone </label><br />
+        <input name="addPhone" type="text" />
+      </div>
+      <div>
+        <label>mail </label><br />
+        <input name="addEMail" type="text" />
+      </div>
+
+      <div>
+        <button class="styled-button" type="submit">
+          ADD CUSTOMER
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- CUSTOMER EDIT VIEW -->
+  <div class="box-6">
+    <form action="/users/edit/search" method="POST">
+      <div>
+        <h3>EDIT CUSTOMER</h3>
+        <label>CUSTOMER ID </label><br />
+        <input readonly name="editID" type="text" value=<%= customerID %>  />
+      </div>
+      <div>
+        <label>first name </label><br />
+        <input name='editName' type="text" value=<%=name %>>
+      </div>
+      <div>
+        <label>last name </label><br />
+        <input name="editSurname" type="text" value=<%=surname %>>
+      </div>
+ <div>
+        <label>phone </label><br />
+        <input name="editPhone" type="text" value=<%=phone %>>
+      </div>
+     <div>
+        <label>email </label><br />
+        <input name="editMail" type="text" value=<%=email %>>
+      </div>
+        <button class="styled-button" formaction="/users/edit/save">
+          SAVE
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
